@@ -1,9 +1,3 @@
----
-title: ING-ChinaTravel
-date: 2024-08-01T15:50:02Z
-lastmod: 2024-08-03T15:57:46Z
----
-
 # ING-ChinaTravel
 
 # Preparation for Departure
