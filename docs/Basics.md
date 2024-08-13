@@ -1,8 +1,8 @@
-<h2 id="📃 说明">📃 说明</h2>
+<h2>📃 说明</h2>
     <ul>
         <li>文件内容由 AI 生成，方便用户下载后编辑。</li>
     </ul>
-<h2 id="🤖 工业品智能专家">🤖 工业品智能专家</h2>
+<h2>🤖 工业品智能专家</h2>
     <ul>
         <iframe sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" src="https://udify.app/chat/srBRibCncZVuFWN3" data-src="" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%; height: 100vh;"></iframe>
     </ul>
