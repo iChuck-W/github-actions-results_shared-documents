@@ -66,11 +66,14 @@
         }
     </style>
 </head>
-<h1>📃 说明</h1>
-    <ul>
-        <li>文件内容由 AI 生成，方便用户下载后编辑。</li>
-    </ul>
-<h1>🤖 工业品智能专家</h1>
-    <ul>
-        <a href="https://www.aibangxuanxing.com" target="_blank">内容由 AI 生成，仅供参考 · 点击进入对话页面</a>
-    </ul>
+<body>
+    <h1>📃 说明</h1>
+        <ul>
+            <li>文件内容由 AI 生成，方便用户下载后编辑。</li>
+        </ul>
+    <h1>🤖 工业品智能专家</h1>
+        <ul>
+             <li><a href="https://www.aibangxuanxing.com" target="_blank">内容由 AI 生成，仅供参考 · 点击进入对话页面</a></li>
+        </ul>
+</body>
+</html>
