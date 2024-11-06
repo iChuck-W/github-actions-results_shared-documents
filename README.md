@@ -9,4 +9,5 @@
 - This component serves for [🧑‍🏭 工业品智能专家](https://www.aibangxuanxing.com)
 
 - Add a URL that need to be analyzed and add the prompt "生成文件" to the question, the app's answers will generate an online file in this project. 
-**Attention**: The file is open.
+
+> **Attention**: The generated files are all public.
