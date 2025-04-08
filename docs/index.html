@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Docsify Open Publishing Starter Kit">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="assets/favicon/favicon.png">
+  <link rel="icon" href="assets/favicon/IconParkToolkit.svg">
 
-  <!-- Themeable Simple theme -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  <!-- Docsify Themeable "develop" branch preview files -->
+  <link rel="stylesheet" href="assets/vendor/themeable/themes/theme-simple.css">
 
   <!-- Themeable Simple light + dark theme (uncomment to use, and comment out the above loading of Simple theme) -->
   <!-- <link rel="stylesheet" media="(prefers-color-scheme: light)"
-    href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"> -->
+    href="assets/vendor/themeable/themes/theme-simple.css"> -->
   <!-- <link rel="stylesheet" media="(prefers-color-scheme: dark)"
-    href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css"> -->
+    href="assets/vendor/themeable/themes/theme-simple-dark.css"> -->
 
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/custom.css">
@@ -36,7 +36,7 @@
     :root {
       --base-font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
       --base-line-height: 1.4;
-      --base-font-size: 1.125rem;
+      --base-font-size: 18px;
 
       --cover-max-width: 45em;
 
@@ -65,25 +65,20 @@
       --link-text-decoration--hover: underline;
 
       --sidebar-name-color: #0374B5;
+      --sidebar-name-font-weight: 600;
       --sidebar-nav-link-color--active: #0374B5;
       --sidebar-nav-link-border-color--active: #0374B5;
       --sidebar-nav-link-font-weight--active: bold;
 
       --sidebar-nav-pagelink-background--active:
-          no-repeat 0px center / 5px 6px
-          linear-gradient(225deg, transparent 2.75px, #0374B5 2.75px 4.25px, transparent 4.25px),
-          no-repeat 5px center / 5px 6px
-          linear-gradient(135deg, transparent 2.75px, #0374B5 2.75px 4.25px, transparent 4.25px);
+        no-repeat 0px center / 5px 6px linear-gradient(225deg, transparent 2.75px, #0374B5 2.75px 4.25px, transparent 4.25px),
+        no-repeat 5px center / 5px 6px linear-gradient(135deg, transparent 2.75px, #0374B5 2.75px 4.25px, transparent 4.25px);
       --sidebar-nav-pagelink-background--collapse:
-          no-repeat 2px calc(50% - 2.5px) / 6px 5px
-          linear-gradient(45deg, transparent 2.75px, #0374B5 2.75px 4.25px, transparent 4px),
-          no-repeat 2px calc(50% + 2.5px) / 6px 5px
-          linear-gradient(135deg, transparent 2.75px, #0374B5 2.75px 4.25px, transparent 4px);
+        no-repeat 2px calc(50% - 2.5px) / 6px 5px linear-gradient(45deg, transparent 2.75px, #0374B5 2.75px 4.25px, transparent 4px),
+        no-repeat 2px calc(50% + 2.5px) / 6px 5px linear-gradient(135deg, transparent 2.75px, #0374B5 2.75px 4.25px, transparent 4px);
       --sidebar-nav-pagelink-background--loaded:
-          no-repeat 0px center / 5px 6px
-          linear-gradient(225deg, transparent 2.75px, #0374B5 2.75px 4.25px, transparent 4.25px),
-          no-repeat 5px center / 5px 6px
-          linear-gradient(135deg, transparent 2.75px, #0374B5 2.75px 4.25px, transparent 4.25px);
+        no-repeat 0px center / 5px 6px linear-gradient(225deg, transparent 2.75px, #0374B5 2.75px 4.25px, transparent 4.25px),
+        no-repeat 5px center / 5px 6px linear-gradient(135deg, transparent 2.75px, #0374B5 2.75px 4.25px, transparent 4.25px);
 
       --navbar-root-margin: 0 0 0 .8em;
       --navbar-root-color--active: #0374B5;
@@ -94,7 +89,6 @@
 
       --docsifytabs-tab-color: var(--base-color);
     }
-
   </style>
 
 </head>
@@ -103,10 +97,10 @@
   <div id="app"></div>
   <script>
     // Enter the URL of your own GitHub Repository in between the two quotes below
-    var gitLinkRepoURL = 'https://github.com/iChuck-W/sharedocuments';
+    var gitLinkRepoURL = 'https://ichuck-w.github.io/github-actions-results_shared-documents';
 
     // Customize the text for your Edit this Page on GitHub link between the two quotes below
-    // var editThisPageLinkText = 'Edit this Page';
+    var editThisPageLinkText = 'Edit this Page';
 
     // Set standalone to true to permanently hide the Sidebar and Navbar
     var standalone = true;
@@ -167,7 +161,8 @@
       homepage: 'home.md',
       // coverpage      : '_coverpage.md',
       loadSidebar: !(getURLParameterByName(['standalone', 'embedded']) || standalone || false),
-      loadNavbar: !(getURLParameterByName(['standalone', 'embedded']) && !(getURLParameterByName('navbar')) || standalone && !navbar ||false),
+      loadNavbar: !(getURLParameterByName(['standalone', 'embedded']) && !(getURLParameterByName('navbar')) || standalone && !navbar || false),
+      mergeNavbar: false,
       externalLinkTarget: standalone ? '_top' : (getURLParameterByName(['standalone', 'embedded'], '_top', '_blank')),
       loadFooter: (getURLParameterByName('footer') || footer || false),
 
@@ -179,14 +174,19 @@
       subMaxLevel: 2,
       hideSidebar: (getURLParameterByName(['standalone', 'embedded']) || standalone),
 
+      skipLink: (!(getURLParameterByName(['standalone', 'embedded']) && !(getURLParameterByName('toc'))) || standalone),
+
       // PLUGIN SETTINGS
       // -----------------------------------------------------------------
       search: {
-        depth: 3,
+        maxAge: 86400000, // Expiration time, the default one day
+        paths: 'auto',
+        placeholder: 'Type to search',
         noData: 'No matches found.',
-        placeholder: 'Enter search text here...',
-        hideOtherSidebarContent: true,
-        namespace: 'Docsify Open Publishing Starter Kit',
+        // Headline depth, 1 - 6
+        depth: 3,
+        namespace: 'docsify-open-publishing-starter-kit',
+        hideOtherSidebarContent: false, // whether or not to hide other sidebar content
       },
 
       pagination: {
@@ -264,7 +264,7 @@
                 }
               }
             }
-              
+
             /* JS to change Embedly cards to light or dark theme based on system setting when using the light + dark theme (uncomment to use) */
             /*
             const embeds = Array.from(htmlElement.querySelectorAll('.embedly-card'))
@@ -282,7 +282,7 @@
                     embed.setAttribute('data-card-theme', 'light');
                   });
               }
-              window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
                 // console.log(`changed to ${e.matches ? "dark" : "light"} mode`);
                 // console.log(e.matches);            
                 document.location.reload();
@@ -290,7 +290,7 @@
 
             }
             */
-            
+
             next(htmlElement.innerHTML);
 
           });
@@ -317,11 +317,11 @@
           hook.doneEach(function () {
             var hasEmbedly = document.getElementsByClassName('embedly-card');
             if (hasEmbedly.length > 0) {
-                // elements with class "embedly-card" exist
-                var script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.src = 'https://cdn.embedly.com/widgets/platform.js';    
-                document.head.appendChild(script);
+              // elements with class "embedly-card" exist
+              var script = document.createElement('script');
+              script.type = 'text/javascript';
+              script.src = 'https://cdn.embedly.com/widgets/platform.js';
+              document.head.appendChild(script);
             }
 
             // Remove optional ToC area if full width header image is present
@@ -344,24 +344,68 @@
             const allIframes = Array.from(document.querySelectorAll('iframe[src*="youtube.com"], iframe[src*="youtube-nocookie.com"], iframe[src*="docs.google.com"], iframe[src*="onedrive.live.com"]'));
 
             // Filter out iframes that are not already wrapped with a div including the classes 'video-container-16by9' and 'video-container-4by3'
-            const targetIframes = allIframes.filter(function(iframe) {
+            const targetIframes = allIframes.filter(function (iframe) {
               const parentDiv = iframe.parentNode;
               return !parentDiv.matches('.video-container-16by9, .video-container-4by3');
             });
 
             // Wrap each target iframe with a div element
-            targetIframes.forEach(function(iframe) {
+            targetIframes.forEach(function (iframe) {
               const wrapperDiv = document.createElement('div');
               wrapperDiv.classList.add('video-container-16by9');
               // Preserve existing classes on the iframe
-              iframe.classList.forEach(function(className) {
+              iframe.classList.forEach(function (className) {
                 wrapperDiv.classList.add(className);
               });
               // Replace the iframe with the wrapper div
               iframe.parentNode.replaceChild(wrapperDiv, iframe);
               wrapperDiv.appendChild(iframe);
             });
-            
+
+          });
+
+          hook.ready(function () {
+            // Original code by @rizdaprasetya and further improved with the assistance of ChatGPT, an AI language model by OpenAI
+            let TARGET_QUERY = 'id';
+            let SCROLL_DELAY = 650; // in milliseconds
+            let location = window.location;
+
+            // Build the current URL without the hash
+            let currentUrlWithoutHash = new URL(
+              location.origin + location.pathname +
+              location.search
+            );
+
+            // Get the search parameters from the URL (before the hash)
+            let urlQueryParam = currentUrlWithoutHash.searchParams;
+            let isUrlHasIdQuery = urlQueryParam.has(TARGET_QUERY);
+
+            // Handle the case where the 'id' is in the fragment (hash) part
+            let hashParams = new URLSearchParams(location.hash.split('?')[1]); // Get the query params after `#`
+            let isHashHasIdQuery = hashParams.has(TARGET_QUERY);
+
+            // Check if the URL contains the 'id' query parameter in either search or hash
+            if (isUrlHasIdQuery || isHashHasIdQuery) {
+
+              // Get the 'id' from either search or hash
+              let urlId = isUrlHasIdQuery ? urlQueryParam.get(TARGET_QUERY) : hashParams.get(TARGET_QUERY);
+
+              // Delay the scrolling to ensure everything is loaded
+              setTimeout(function () {
+                try {
+                  let targetElement = document.querySelector('#' + urlId);
+                  if (targetElement) {
+                    // Scroll to the element with smooth behavior
+                    targetElement.scrollIntoView({
+                      behavior: 'smooth',  // Enables smooth scrolling
+                      block: 'start',      // Aligns the top of the element to the top of the viewport
+                    });
+                  }
+                } catch (e) {
+                  console.log('custom scroll failed', e);
+                }
+              }, SCROLL_DELAY);
+            }
           });
 
         }
@@ -371,7 +415,8 @@
 
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <!-- Docsify "develop" branch preview files -->
+  <script src="assets/vendor/docsify/docsify.min.js"></script>
 
   <!-- Adjust Page Margins When Standalone or Embedded -->
   <script>
@@ -383,13 +428,13 @@
   </script>
 
   <!-- Customizable Theme-->
-  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+  <script src="assets/vendor/themeable/docsify-themeable.min.js"></script>
 
   <!-- Search Box Plugin -->
-  <script src="assets/js/search.min.js"></script>
+  <script src="assets/vendor/docsify/plugins/search.js"></script>
 
   <!-- Font Awesome Plugin -->
-  <script src="assets/js/docsify-fontawesome.min.js"></script>
+  <script src="assets/vendor/docsify/plugins/docsify-fontawesome.min.js"></script>
 
   <!-- Tabs Plugin-->
   <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>
@@ -401,19 +446,25 @@
   <script src="//cdn.jsdelivr.net/npm/@sy-records/docsify-footnotes/lib/index.min.js"></script>
 
   <!-- Footer Plugin -->
-  <script src="assets/js/docsify-footer.min.js"></script>
+  <script src="assets/vendor/docsify/plugins/docsify-footer.min.js"></script>
 
   <!-- Pagination Plugin -->
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
 
   <!-- Docsify Browser-level Image Lazy Loading Plugin -->
-  <script src="//cdn.jsdelivr.net/npm/@sy-records/docsify-loading/lib/index.min.js"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/@sy-records/docsify-loading/lib/index.min.js"></script> -->
+
+  <!-- Image Grid Plugin -->
+  <script src="assets/vendor/docsify/plugins/docsify-img-grid.js"></script>
+
+  <!-- Zoom Image Plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 
   <!-- Table of Contents Plugin -->
   <script>
     if (getURLParameterByName('toc') || ToC) {
       document.write('<link rel="stylesheet" type="text/css" href="assets/css/toc.css" />');
-      document.write('<script src="https://unpkg.com/docsify-toc@1.1.0/dist/toc.js"><\/script>');
+      document.write('<script src="assets/vendor/docsify/plugins/toc.js"><\/script>');
     }
   </script>
 
@@ -422,6 +473,7 @@
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-go.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-java.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-kotlin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markdown.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-php.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-swift.min.js"></script>
