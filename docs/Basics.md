@@ -1,11 +1,7 @@
-------
-
 # 📃 说明
 
 - 📃 回答内容由 AI 生成，仅供参考。此文件可下载，方便进一步编辑。
 
-- 🤖 [点击进入对话页面](https://www.aibangxuanxing.com)
-
-------
+- 💬 [点击进入对话页面](https://www.aibangxuanxing.com)
 
 # 📃 以下是回答内容
