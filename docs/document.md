@@ -6,12 +6,15 @@
 
 [在线视频](https://players.brightcove.net/5229431846001/default_default/index.html?videoId=5713314326001&iframe=true)
 
+原始方案
 <iframe 
   src="https://players.brightcove.net/5229431846001/default_default/index.html?videoId=5713314326001&iframe=true" 
   frameborder="0" 
   allowfullscreen
   style="width: 100%; height: calc(100vh - 20px);"
 ></iframe>
+
+方案一
 
 <iframe 
   src="ttps://players.brightcove.net/5229431846001/default_default/index.html?videoId=5713314326001&iframe=true" 
@@ -30,6 +33,7 @@
   }
 </style>
 
+方案三
 <iframe 
   src="https://players.brightcove.net/index.html?videoId=5713314326001&iframe=true" 
   frameborder="0" 
