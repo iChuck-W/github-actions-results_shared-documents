@@ -4,45 +4,8 @@
 
 # Fluke 424D 激光测距仪手册+资源
 
-[在线视频](https://players.brightcove.net/5229431846001/default_default/index.html?videoId=5713314326001&iframe=true)
-
-原始方案
-<iframe 
-  src="https://players.brightcove.net/5229431846001/default_default/index.html?videoId=5713314326001&iframe=true" 
-  frameborder="0" 
-  allowfullscreen
-  style="width: 100%; height: calc(100vh - 20px);"
-></iframe>
-
-方案一
-
-<iframe 
-  src="https://players.brightcove.net/5229431846001/default_default/index.html?videoId=5713314326001&iframe=true" 
-  frameborder="0" 
-  allowfullscreen
-  style="width: 100%; height: calc(100vh - 20px);"
-  class="no-print"
-></iframe>
-
-<style>
-  @media print {
-    .no-print, iframe {
-      display: none !important;
-      height: 0 !important;
-    }
-  }
-</style>
-
-方案三
-<iframe 
-  src="https://players.brightcove.net/5229431846001/default_default/index.html?videoId=5713314326001&iframe=true" 
-  frameborder="0" 
-  allowfullscreen
-  style="width: 100%; height: calc(100vh - 20px);"
-></iframe>
-
 <p class="print-only" style="display: none;">
-  [注：此处为在线视频，请查看原文链接：<a href="https://players.brightcove.net/5229431846001/default_default/index.html?videoId=5713314326001&iframe=true">视频</a>]
+  [注：此处为在线视频，请点击查看：<a href="https://players.brightcove.net/5229431846001/default_default/index.html?videoId=5713314326001&iframe=true">在线视频</a>]
 </p>
 
 <style>
